@@ -1,0 +1,12 @@
+<html>
+<head>
+    <title>Bookmark list</title>
+</head>
+<body>
+{% for bookmark in bookmarks %}
+{{ bookmark }}
+{% empty %}
+No data.
+{% endfor %}
+</body>
+</html>
