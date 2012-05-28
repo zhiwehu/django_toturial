@@ -1,12 +1,10 @@
-<html>
-<head>
-    <title>Bookmark list</title>
-</head>
-<body>
-{% for bookmark in bookmarks %}
-{{ bookmark }}
-{% empty %}
-No data.
-{% endfor %}
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block main_content %}
+    <h1>Bookmarks</h1>
+    <ul>
+    {% for bookmark in bookmarks %}
+        <li>{{ bookmark }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

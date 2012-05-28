@@ -1,0 +1,20 @@
+header {
+    background-color: #fffccf;
+}
+
+section {
+    background-color: #7CA0C7;
+    width: 80%;
+    float: left;
+}
+
+aside {
+    background-color: #c9dbed;
+    width: 20%;
+    float: left;
+}
+
+footer {
+    background-color: #f6f6f6;
+    clear: both;
+}
