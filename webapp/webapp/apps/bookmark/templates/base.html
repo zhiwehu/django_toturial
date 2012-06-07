@@ -1,29 +1,50 @@
 <!DOCTYPE HTML>
 {% load static %}
+{% load i18n %}
 <html>
 <head>
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/bootstrap-responsive.min.css' %}" rel="stylesheet">
     <title>Bookmark</title>
 </head>
 <body>
-    <header>
-        <h1>
-            IBookmark
-            <small>Share your IBookmark.</small>
-        </h1>
-    </header>
+<header>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="{% url bookmark_list %}">{% trans "IBookmark" %}</a>
+                <ul class="nav">
+                    <li><a href="{% url bookmark_list %}">{% trans "Bookmarks" %}</a></li>
+                    <li><a href="{% url bookmark_create %}">{% trans "Add bookmark" %}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
 
+<div class="container">
     <section>
-        {% block main_content %}{% endblock %}
+        <div class="page-header">
+            <h1>Bookmarks
+                <small>Share your bookmarks!</small>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="span8">{% block main_content %}{% endblock %}</div>
+            <div class="span4">Tags</div>
+        </div>
     </section>
-    <aside>
-        <h1>
-            Tags
-        </h1>
-    </aside>
 
-    <footer>
-        Copy right 2012.
+    <hr />
+
+    <footer class="footer">
+        <p>Copyright 2012</p>
     </footer>
+</div>
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 </body>
 </html>

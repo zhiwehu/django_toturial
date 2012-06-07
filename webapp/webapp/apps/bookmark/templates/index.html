@@ -1,10 +1,27 @@
 {% extends "base.html" %}
+{% load static %}
+{% load i18n %}
 
 {% block main_content %}
-    <h1>Bookmarks</h1>
-    <ul>
+<table class="table table-bordered table-striped">
+    <thead>
+    <td>{% trans "Title" %}</td>
+    <td>{% trans "Edit" %}</td>
+    <td>{% trans "Delete" %}</td>
+    </thead>
+    <tbody>
     {% for bookmark in bookmarks %}
-        <li>{{ bookmark }}</li>
+    <tr>
+        <td><i class="icon-bookmark"></i> <a href="{{ bookmark.url }}">{{ bookmark.title }}</a></td>
+        <td><i class="icon-edit"></i> <a href="{% url bookmark_update bookmark.id %}">{% trans "Edit" %}</a></td>
+        <td><i class="icon-remove"></i> <a href="{% url bookmark_delete bookmark.id %}">{% trans "Delete" %}</a></td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="3">{% trans "No data" %}</td>
+    </tr>
     {% endfor %}
-    </ul>
+    </tbody>
+</table>
+
 {% endblock %}
