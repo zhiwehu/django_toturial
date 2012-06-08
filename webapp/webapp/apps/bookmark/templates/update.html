@@ -1,13 +1,12 @@
-<html>
-<head>
-    <title>Update a bookmark</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block main_content %}
 <form action="." method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" />
     <input type="reset" />
 </form>
-</body>
-</html>
+{% endblock %}
