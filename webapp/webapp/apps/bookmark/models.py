@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 
 class Bookmark(models.Model):
+    creator = models.ForeignKey(User,blank=True, null=True)
     url = models.URLField()
     title = models.CharField(blank=True, max_length=100, help_text='Limit of 100 characters')
     public = models.BooleanField(verbose_name='Public this bookmark', blank=True, default=True)

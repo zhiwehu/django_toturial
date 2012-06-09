@@ -18,7 +18,7 @@ def create(request):
         form = BookmarkForm(request.POST) # A form bound to the POST data
         if form.is_valid(): # All validation rules pass
             bookmark = form.save()
-            return HttpResponseRedirect(reverse('bookmark_list')) # Redirect after POST
+            return HttpResponseRedirect(reverse('bookmark_index')) # Redirect after POST
     else:
         form = BookmarkForm() # An unbound form
 
@@ -38,7 +38,7 @@ def update(request, bookmark_id):
         form = BookmarkForm(request.POST, instance=bookmark)
         if form.is_valid(): # All validation rules pass
             bookmark = form.save()
-            return HttpResponseRedirect(reverse('bookmark_list')) # Redirect after POST
+            return HttpResponseRedirect(reverse('bookmark_index')) # Redirect after POST
     else:
         form = BookmarkForm(instance=bookmark)
 

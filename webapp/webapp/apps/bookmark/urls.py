@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import patterns, url
 
 urlpatterns = patterns('',
-    url(r'^/index/$', 'bookmark.views.index', name='bookmark_list'),
+    url(r'^/index/$', 'bookmark.views.index', name='bookmark_index'),
     url(r'^/create/$', 'bookmark.views.create', name='bookmark_create'),
     url(r'^/update/(?P<bookmark_id>\d+)/$', 'bookmark.views.update', name='bookmark_update'),
     url(r'^/delete/(?P<bookmark_id>\d+)/$', 'bookmark.views.delete', name='bookmark_delete'),
